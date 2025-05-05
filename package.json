@@ -1,5 +1,5 @@
 {
-  "homepage": "https://Shahid-Anwaar.github.io/Tailor-Frontend",
+  "homepage": "https://shahid-anwaar.github.io/Tailor-Frontend/",
   "name": "Tailor Master",
   "version": "0.1.0",
   "private": true,
@@ -72,6 +72,7 @@
     "dev": "set REACT_APP_ENV=dev&& set PORT=1501&& react-scripts start",
     "dev-build": "set REACT_APP_ENV=dev&& react-scripts build",
     "prod-build": "set REACT_APP_ENV=prod&& react-scripts build",
+    "build": "set REACT_APP_ENV=dev&& react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
