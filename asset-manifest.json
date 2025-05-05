@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Tailor-Frontend/static/css/main.686ea663.css",
+    "main.js": "/Tailor-Frontend/static/js/main.2436e8fe.js",
+    "static/js/787.bf6da795.chunk.js": "/Tailor-Frontend/static/js/787.bf6da795.chunk.js",
+    "static/media/login_image.jpg": "/Tailor-Frontend/static/media/login_image.18d2cec15bf870217f96.jpg",
+    "static/media/NotoNastaliqUrdu-VariableFont_wght.woff2": "/Tailor-Frontend/static/media/NotoNastaliqUrdu-VariableFont_wght.11f179bccd77bc27322d.woff2",
+    "static/media/admin.png": "/Tailor-Frontend/static/media/admin.130b1832a556ab87c2c9.png",
+    "static/media/logo-1.png": "/Tailor-Frontend/static/media/logo-1.5735d5c7422c95c30b0f.png",
+    "static/media/search icon.png": "/Tailor-Frontend/static/media/search icon.c13e29b2b77e4eea4baf.png",
+    "static/media/logo.jpg": "/Tailor-Frontend/static/media/logo.1dba2a053a0c24eab771.jpg",
+    "static/media/csv.png": "/Tailor-Frontend/static/media/csv.750a499921bec3969c21.png",
+    "static/media/doc.png": "/Tailor-Frontend/static/media/doc.249dfeebce405d4da801.png",
+    "index.html": "/Tailor-Frontend/index.html",
+    "main.686ea663.css.map": "/Tailor-Frontend/static/css/main.686ea663.css.map",
+    "main.2436e8fe.js.map": "/Tailor-Frontend/static/js/main.2436e8fe.js.map",
+    "787.bf6da795.chunk.js.map": "/Tailor-Frontend/static/js/787.bf6da795.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.686ea663.css",
+    "static/js/main.2436e8fe.js"
+  ]
+}
