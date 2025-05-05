@@ -96,19 +96,6 @@ function AppSideBar({ mobileOpen, handleDrawerToggle }) {
       >
         <Toolbar />
         <Outlet />
-        {/* <div
-          className="scroll-top-community"
-          style={{
-            bottom: showScrollArrow ? "50px" : "-80px",
-          }}
-          onClick={handleScrollTop}
-        >
-          <Tooltip title="Scroll to top">
-            <div>
-              <i className="fa-solid fa-arrow-up"></i>
-            </div>
-          </Tooltip>
-        </div> */}
       </Box>
     </>
   );

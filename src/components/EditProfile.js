@@ -37,7 +37,7 @@ const EditProfile = ({ handleCloseModel }) => {
     first_name: "Mujahid",
     last_name: "Anwaar",
     contact_number: "+92-307-0006269",
-    email: "mujahid@example.com",
+    email: "tailor@gmail.com",
     address: "",
     image: null,
   });

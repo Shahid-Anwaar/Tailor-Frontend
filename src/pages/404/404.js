@@ -15,7 +15,6 @@ const NotFound = () => {
           Sorry, the page you’re looking for cannot be found.
         </p>
         <div className="not-found-animation">
-          {/* Use a simple and clean icon */}
           <Iconify icon="mdi:alert-circle-outline" className="not-found-icon" />
         </div>
         <button onClick={handleNavigate} className="not-found-button">

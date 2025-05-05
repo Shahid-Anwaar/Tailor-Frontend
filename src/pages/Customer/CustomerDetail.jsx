@@ -8,7 +8,6 @@ import MUICustomTabs from "../../components/MUICustomTabs";
 import BasicBreadcrumbs from "../../components/GeneralComponents/BreadCrumbs";
 import { useAdminContext } from "../../Hooks/AdminContext";
 import moment from "moment";
-import usersData from "./data";
 import StatusChip from "../../theme/chip";
 import { get_single_customer_detail } from "../../DAL/customers/customer";
 
@@ -41,7 +40,7 @@ const CustomerDetail = () => {
             active: false,
         },
         {
-            title: `User Profile`,
+            title: `Customer Profile`,
             navigation: "",
             status: "Active",
         },

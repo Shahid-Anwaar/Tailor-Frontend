@@ -74,75 +74,6 @@ export default function AccountPopover({ setIsLoading }) {
     },
   ];
 
-  // const { pathname } = useLocation();
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     const is_path_includes = (path) => {
-  //       return pathname.toString().includes(path);
-  //     };
-  //     if (!is_path_includes("/roles")) {
-  //       localStorage.removeItem("searchText_Roles_Page");
-  //     }
-  //     if (!is_path_includes("/departments")) {
-  //       localStorage.removeItem("searchText_Departments_Page");
-  //     }
-  //     if (!is_path_includes("/team-members")) {
-  //       localStorage.removeItem("searchText_Team_Members_Page");
-  //       localStorage.removeItem("activeTab-panel1");
-  //       localStorage.removeItem("activeTab-panel2");
-  //       localStorage.removeItem("activeTab-panel3");
-  //     }
-  //     if (!is_path_includes("/all-leaves")) {
-  //       localStorage.removeItem("activeTab-panel4");
-  //       localStorage.removeItem("All_Leaves_Filter");
-  //     }
-  //     if (!is_path_includes("/leaves-report")) {
-  //       localStorage.removeItem("Filter_Leaves_Reports_Page");
-  //       localStorage.removeItem("searchText_Leaves_Reports_Page");
-  //     }
-  //     if (!is_path_includes("/my-leaves")) {
-  //       localStorage.removeItem("My_Leaves_Filter");
-  //     }
-  //     if (!is_path_includes("/lunch")) {
-  //       localStorage.removeItem("Lunch_Page_Filter");
-  //     }
-  //     if (!is_path_includes("/attendance")) {
-  //       localStorage.removeItem("All_Attendance_Page");
-  //     }
-  //     if (!is_path_includes("/allowances")) {
-  //       localStorage.removeItem("Allowances_Page_Filter");
-  //     }
-  //     if (!is_path_includes("/announcements")) {
-  //       localStorage.removeItem("searchText_Announcements_Page");
-  //     }
-  //     if (!is_path_includes("/companies")) {
-  //       localStorage.removeItem("searchText_Companies_Page");
-  //     }
-  //     if (!is_path_includes("/loans")) {
-  //       localStorage.removeItem("All_Loans_Page_Filter_Pending_Installments");
-  //       localStorage.removeItem("All_Loans_Page_Filter");
-  //       localStorage.removeItem("activeTab-panel5");
-  //     }
-  //     if (!is_path_includes("/my-loans")) {
-  //       localStorage.removeItem("activeTab-panel6");
-  //       localStorage.removeItem("searchText_My_Loans_Page");
-  //     }
-  //     if (!is_path_includes("/expense-categorie")) {
-  //       localStorage.removeItem("searchText_Expense_Categorie_Page");
-  //     }
-  //     if (!is_path_includes("/expenses-report")) {
-  //       localStorage.removeItem("Expense_Page_Filter");
-  //     }
-  //     if (!is_path_includes("/top-up")) {
-  //       localStorage.removeItem("Top_Up_Page_Filter");
-  //     }
-  //     if (!is_path_includes("/fines")) {
-  //       localStorage.removeItem("Fines_Page_Data");
-  //       localStorage.removeItem("searchText_Fines_Page");
-  //     }
-  //   }, 1000);
-  // }, [pathname]);
-
   const handleOpen = () => {
     setOpen(true);
   };
@@ -157,49 +88,17 @@ export default function AccountPopover({ setIsLoading }) {
     setNotificationAnchor(null);
   };
 
-  // useEffect(() => {
-  //   if (userData) {
-  //     setProfileInfo({
-  //       name: userData?.full_name,
-  //       avatar: picBaseUrl + userData?.profile_pic?.small,
-  //       email: userData?.email,
-  //       role: userData?.role.title,
-  //     });
-  //   }
-  // }, [userData]);
 
   return (
     <div className={`mt-4 px-0`}>
       <div className="d-flex justify-content-between profile_menu">
         <div className="left-item">
-          {/* <Badge badgeContent={notifications.length} color="error">
-            <Box
-              className="notification-container pointer"
-              onClick={handleNotificationClick}
-            >
-              <Iconify
-                className="notification-bell"
-                icon={"line-md:bell-loop"}
-              />
-            </Box>
-          </Badge> */}
-          {/* <Box
-              className="notification-container pointer"
-              onClick={handleNotificationClick}
-            >
-              <Iconify
-                className="notification-bell"
-                icon={"line-md:bell-loop"}
-              />
-            </Box> */}
-          {/* Notifications Dropdown */}
           <Menu
             anchorEl={notificationAnchor}
             open={Boolean(notificationAnchor)}
             onClose={handleNotificationClose}
             PaperProps={{
               sx: { width: 300 },
-              // onMouseLeave: handleNotificationClose,
             }}
             slotProps={{
               paper: {
@@ -272,7 +171,6 @@ export default function AccountPopover({ setIsLoading }) {
             </div>
             <div className="profile-info d-none d-md-flex">
               <span className="user-name">Mujahid Anwaar</span>
-              {/* <span className="user-role">admin</span> */}
             </div>
 
             <span className="chevron-icon pointer ms-0">
@@ -288,7 +186,7 @@ export default function AccountPopover({ setIsLoading }) {
       {
         <ProfilePop
           name={"Mujahid Anwaar"}
-          email={"mujahid@example.com"}
+          email={"tailor@gmail.com"}
           open={open}
           handleClose={handleClose}
           anchorEl={anchorRef.current}

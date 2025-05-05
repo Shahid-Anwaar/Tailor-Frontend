@@ -46,18 +46,7 @@ export default function ProfileIcon({
     event.preventDefault();
     navigate("/login");
     enqueueSnackbar("Successfuly Logout", { variant: "success" });
-
-    // setLoading(true);
-    // const response = await _logout(DevicePreference);
-    // if (response.code === 200) {
-    //   localStorage.removeItem("token");
-    //   enqueueSnackbar(response.message, { variant: "success" });
-    //   setLoading(false);
-    //   navigate("/login");
-    // } else {
-    //   setLoading(false);
-    //   enqueueSnackbar(response.message, { variant: "error" });
-    // }
+    localStorage.clear();
   };
 
   return (

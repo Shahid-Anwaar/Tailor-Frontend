@@ -44,8 +44,20 @@ const LoginForm = ({ setFormState }) => {
 
   const handleSubmitLogin = async (e) => {
     e.preventDefault();
-    navigate(`/customer-list`, { replace: true });
-    enqueueSnackbar("Login Successful", { variant: "success" });
+    console.log(inputs, "my inputs");
+    if (inputs.email == "tailor@gmail.com" && inputs.password == "123") {
+      localStorage.setItem("email", inputs.email);
+      navigate(`/customer-list`, { replace: true });
+      enqueueSnackbar("Login Successful", { variant: "success" });
+    } else if (inputs.email == "tailor@gmail.com") {
+      enqueueSnackbar("Login Failed! please enter correct Password", { variant: "error" });
+    } else if (inputs.password == "123") {
+      enqueueSnackbar("Login Failed! please enter correct Email", { variant: "error" });
+    } else {
+      enqueueSnackbar("Login Failed! please enter correct email & Password", { variant: "error" });
+    }
+
+
 
     // localStorage.setItem("email", inputs.email);
     // setIsLoading(true);

@@ -15,7 +15,6 @@ import DeleteConfirmation from "../../components/DeleteConfirmation";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import Person3Icon from "@mui/icons-material/Person3";
-// import usersData from "./data";
 import { del_customer_by_id, get_customers_list } from "../../DAL/customers/customer";
 import { useSnackbar } from "notistack";
 import moment from "moment/moment";
