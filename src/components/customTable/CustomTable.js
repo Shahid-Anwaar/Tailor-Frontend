@@ -262,7 +262,7 @@ export default function CustomTable({
       ) : (
         <>
           <div
-            className={`table-heading ${
+            className={`table-heading mb-3 ${
               pagePagination
                 ? "d-flex justify-content-between pt-2 align-items-center mb-3"
                 : "text-end"
@@ -317,7 +317,7 @@ export default function CustomTable({
       )}
 
       <TableContainer sx={{ minWidth: 800 }}>
-        <Table>
+        <Table size="small">
           <MuiTableHeadList
             order={order}
             orderBy={orderBy}

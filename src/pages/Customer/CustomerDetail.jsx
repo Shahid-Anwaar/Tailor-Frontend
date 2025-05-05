@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, Chip, Tooltip, Avatar } from "@mui/material";
+import { Card, Chip, Tooltip, Avatar, IconButton } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import { CircularProgress } from "@mui/material";
@@ -9,6 +9,7 @@ import BasicBreadcrumbs from "../../components/GeneralComponents/BreadCrumbs";
 import { useAdminContext } from "../../Hooks/AdminContext";
 import moment from "moment";
 import StatusChip from "../../theme/chip";
+import EditIcon from "@mui/icons-material/Edit";
 import { get_single_customer_detail } from "../../DAL/customers/customer";
 
 const useStyles = makeStyles(() => ({
@@ -93,12 +94,26 @@ const CustomerDetail = () => {
                                 <Avatar
                                     //   className="pointer"
                                     alt={user?.name}
-                                    src={user?.image || "/default-avatar.png"}
+                                    src={user?.image || ""}
                                     sx={{ width: 75, height: 75 }}
                                 />
                                 <div className="ms-4">
-                                    <h2>{user?.name}</h2>
-                                    <div className="text-muted">{user?.address}</div>
+                                    <div className="w-100 d-flex justify-content-between align-items-center">
+                                        <h2>{user?.name}</h2>
+                                        <IconButton
+                                            className="edit-icon"
+                                            color="primary"
+                                            aria-label="upload picture"
+                                            component="span"
+                                            onClick={() => {
+                                                console.log(user, "hihihihih");
+                                                navigate(`/edit-customer/${user?._id}`);
+                                            }}
+                                        >
+                                            <EditIcon style={{ width: "16px", height: "16px" }} />
+                                        </IconButton>
+                                    </div>
+                                    <div className="text-muted" style={{ fontSize: "15px" }}>{user?.address}</div>
                                 </div>
                             </div>
                             <div className="col-12 col-md-5 d-flex justify-content-end"></div>
@@ -113,13 +128,15 @@ const CustomerDetail = () => {
                             <div className="col-5 col-md-6 col-lg-3 mb-3">
                                 <h6>Collected Time:</h6>
                             </div>
-                            <div className="col-7 col-md-6 col-lg-3 text-muted">
+                            <div className="col-7 col-md-6 col-lg-3 text-muted" style={{ fontSize: "15px" }}>
                                 {moment(user?.col_time).format('hh:mm A - DD/MM/YYYY')}
                             </div>
                             <div className="col-5 col-md-6 col-lg-3 mb-3">
                                 <h6>Last Date:</h6>
                             </div>
-                            <div className="col-7 col-md-6 col-lg-3 text-muted">{moment(user?.last_date).format('hh:mm A - DD/MM/YYYY')}</div>
+                            <div className="col-7 col-md-6 col-lg-3 text-muted" style={{ fontSize: "15px" }}>
+                                {moment(user?.last_date).format('hh:mm A - DD/MM/YYYY')}
+                            </div>
                             <div className="col-5 col-md-6 col-lg-3 mb-3">
                                 <h6>Items:</h6>
                             </div>

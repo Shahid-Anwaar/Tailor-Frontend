@@ -59,7 +59,7 @@ export default function MuiTableHeadList({
   }, [headLabel, rowCount, numSelected]);
 
   return (
-    <TableHead className="table-heading">
+    <TableHead className="table-heading mt-5">
       <TableRow>
         {tableHead.map((headCell) => (
           <TableCell

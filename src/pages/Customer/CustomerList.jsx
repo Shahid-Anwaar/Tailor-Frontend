@@ -268,12 +268,12 @@ const CustomerList = () => {
           </div>
           <Button
             variant="contained"
-            startIcon={<Iconify icon="eva:plus-fill" />}
+            // startIcon={<Iconify icon="eva:plus-fill" />}
             onClick={() => {
               navigate(`/add-customer`);
             }}
           >
-            Add new Customer
+          Add Customer
           </Button>
         </div>
         {loading ? <div className="customer-list-loader d-flex justify-content-center align-items-center">

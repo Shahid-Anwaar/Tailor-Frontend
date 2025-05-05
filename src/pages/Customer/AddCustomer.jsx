@@ -12,6 +12,7 @@ import {
   FormControlLabel,
   Checkbox,
   styled,
+  CircularProgress,
 } from "@mui/material";
 import CustomTextFieldUrdu from "../../components/CustomTextFieldUrdu/CustomTextFieldUrdu";
 import { useSnackbar } from "notistack";
@@ -29,11 +30,13 @@ import moment from "moment";
 
 
 export const AddCustomer = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [phoneNumber, setPhoneNumber] = useState("");
   const { setnavbarTitle } = useAdminContext();
 
   const handlePhoneChange = (value, country) => {
+    console.log(value, country, );
+    
     setPhoneNumber(value);
   };
   const [file, setProfileImage] = useState();
@@ -133,7 +136,7 @@ export const AddCustomer = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(selectedAddress, phoneNumber, "hihihihih");
-    
+
     if (selectedAddress?.formatted_address) {
       localInput.address = selectedAddress?.formatted_address || "";
     } else {
@@ -165,27 +168,31 @@ export const AddCustomer = () => {
   ];
 
   async function getSingleCustomerDetail(id) {
+    setLoading(true);
     const response = await get_single_customer_detail(id);
     console.log(response, "API response.......");
-    if (response.status == 200  || response.status == 201) {
+    if (response.status == 200 || response.status == 201) {
       const formattedDate = response?.data?.last_date
         ? new Date(response?.data.last_date).toISOString().slice(0, 16)
         : '';
 
       let data = { ...response?.data, last_date: formattedDate };
       setLocalInput(data);
-      setPhoneNumber(data.contact);
       setSelectedAddress(data.address);
-
+      setTimeout(() => {
+        setPhoneNumber(data.contact);
+      }, 10);
     } else {
       enqueueSnackbar("Cannot get the Data of single Customers", { variant: "error" });
     }
-    // setIsLoading(false);
+    setLoading(false);
   }
 
   useEffect(() => {
     if (params.id) {
       getSingleCustomerDetail(params?.id);
+    } else {
+      setLoading(false);
     }
   }, [params?.id]);
 
@@ -201,35 +208,36 @@ export const AddCustomer = () => {
             <BasicBreadcrumbs items={BreadCrumbsList} />
           </div>
 
-          <div className="row">
-            <div className="col-md-6 mt-2">
-              <TextField
-                label="Name"
-                fullWidth
-                value={localInput.name}
-                onChange={(e) => handleChange(e, "name")}
-                required
-              />
-            </div>
-            <div className="col-md-6 mt-2">
-              <PhoneInput
-                enableSearch={true}
-                autoSelectCountry={false}
-                country="pk"
-                value={phoneNumber}
-                setValue={setPhoneNumber}
-                onChange={handlePhoneChange}
-              />
-            </div>
-            <div className="col-md-6 mt-3">
-              <GooglePlacesAutocomplete
-                setSelectedLocation={setSelectedAddress}
-                label="Street Address"
-                required={true}
-                defaultValue={selectedAddress}
-              />
-            </div>
-            {/* <div className="col-md-6 mt-2">
+          {!loading ? <>
+            <div className="row">
+              <div className="col-md-6 mt-2">
+                <TextField
+                  label="Name"
+                  fullWidth
+                  value={localInput.name}
+                  onChange={(e) => handleChange(e, "name")}
+                  required
+                />
+              </div>
+              <div className="col-md-6 mt-2">
+                <PhoneInput
+                  enableSearch={true}
+                  autoSelectCountry={false}
+                  country="pk"
+                  value={phoneNumber}
+                  setValue={setPhoneNumber}
+                  onChange={handlePhoneChange}
+                />
+              </div>
+              <div className="col-md-6 mt-3">
+                <GooglePlacesAutocomplete
+                  setSelectedLocation={setSelectedAddress}
+                  label="Street Address"
+                  required={true}
+                  defaultValue={selectedAddress}
+                />
+              </div>
+              {/* <div className="col-md-6 mt-2">
               <TextField
                 label="Collection Time"
                 fullWidth
@@ -237,71 +245,77 @@ export const AddCustomer = () => {
                 onChange={(e) => handleChange(e, "col_time")}
               />
             </div> */}
-            <div className="col-md-6 mt-2">
-              <TextField
-                label="Last Date"
-                type="datetime-local"
-                fullWidth
-                InputLabelProps={{ shrink: true }}
-                value={localInput.last_date}
-                onChange={(e) => handleChange(e, "last_date")}
-              />
-            </div>
-            <div className="col-md-6 mt-2">
-              <TextField
-                label="Items"
-                type="number"
-                fullWidth
-                value={localInput.items}
-                onChange={(e) => handleChange(e, "items")}
-              />
-            </div>
-            <div className="col-md-6 mt-2">
-              <FormControl fullWidth required>
-                <InputLabel>Status</InputLabel>
-                <Select
-                  value={localInput?.status}
-                  onChange={(e) => handleChange(e, "status")}
-                  label="Status"
-                >
-                  <MenuItem value="Pending">Pending</MenuItem>
-                  <MenuItem value="Started">Started</MenuItem>
-                  <MenuItem value="Completed">Completed</MenuItem>
-                </Select>
-              </FormControl>
-            </div>
-            {measurements.map((item) => (
-              <div key={item.id} className="col-lg-3 col-md-4 col-6 mt-2">
+              <div className="col-md-6 mt-2">
                 <TextField
-                  label={item.label}
-                  type="number"
-                  min={0}
+                  label="Last Date"
+                  type="datetime-local"
                   fullWidth
-                  value={localInput[item.id]}
-                  onChange={(e) => handleChange(e, item.id)}
-                  required
+                  InputLabelProps={{ shrink: true }}
+                  value={localInput.last_date}
+                  onChange={(e) => handleChange(e, "last_date")}
                 />
               </div>
-            ))}
-            {checkboxesElements.map((option) => (
-              <div key={option.id} className="col-md-3 col-6 mt-2">
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={localInput[option.id]}
-                      onChange={(e) => handleCheckboxChange(e, option.id)}
-                    />
-                  }
-                  label={option.label}
+              <div className="col-md-6 mt-2">
+                <TextField
+                  label="Items"
+                  type="number"
+                  fullWidth
+                  value={localInput.items}
+                  onChange={(e) => handleChange(e, "items")}
                 />
               </div>
-            ))}
-            <div className="col-md-12 mt-3 text-end">
-              <Button variant="contained" color="primary" type="submit">
-                {params.id ? "Update" : "Submit"}
-              </Button>
+              <div className="col-md-6 mt-2">
+                <FormControl fullWidth required>
+                  <InputLabel>Status</InputLabel>
+                  <Select
+                    value={localInput?.status}
+                    onChange={(e) => handleChange(e, "status")}
+                    label="Status"
+                  >
+                    <MenuItem value="Pending">Pending</MenuItem>
+                    <MenuItem value="Started">Started</MenuItem>
+                    <MenuItem value="Completed">Completed</MenuItem>
+                  </Select>
+                </FormControl>
+              </div>
+              {measurements.map((item) => (
+                <div key={item.id} className="col-lg-3 col-md-4 col-6 mt-2">
+                  <TextField
+                    label={item.label}
+                    type="number"
+                    min={0}
+                    fullWidth
+                    value={localInput[item.id]}
+                    onChange={(e) => handleChange(e, item.id)}
+                    required
+                  />
+                </div>
+              ))}
+              {checkboxesElements.map((option) => (
+                <div key={option.id} className="col-md-3 col-6 mt-2">
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        checked={localInput[option.id]}
+                        onChange={(e) => handleCheckboxChange(e, option.id)}
+                      />
+                    }
+                    label={option.label}
+                  />
+                </div>
+              ))}
+              <div className="col-md-12 mt-3 text-end">
+                <Button variant="contained" color="primary" type="submit">
+                  {params.id ? "Update" : "Submit"}
+                </Button>
+              </div>
             </div>
-          </div>
+          </>
+            :
+            <div className="col-12 d-flex justify-content-center align-items-center" style={{height: "500px"}}>
+              <CircularProgress size={24} color="error"/>
+            </div>
+          }
         </div>
       </form>
     </div>

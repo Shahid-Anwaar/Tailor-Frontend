@@ -85,7 +85,7 @@ function AppSideBar({ mobileOpen, handleDrawerToggle }) {
         component="main"
         sx={{
           flexGrow: 1,
-          p: 3,
+          p: 1,
           paddingBottom: {
             md: "100px",
           },

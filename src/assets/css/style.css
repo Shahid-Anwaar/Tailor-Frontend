@@ -1885,6 +1885,12 @@ input[type="number"] {
   left: 57px;
 }
 
+.edit-icon {
+  padding: 4px !important;
+  background-color: #f3f3f3ab !important;
+  cursor: pointer !important;
+}
+
 .Position_update {
   height: 110px;
   position: relative !important;

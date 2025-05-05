@@ -20,7 +20,7 @@ function AppHeader({ handleDrawerToggle, setIsLoading }) {
         }}
         elevation={0}
       >
-        <Toolbar>
+        <Toolbar className="px-3">
           <IconButton
             color="inherit"
             aria-label="open drawer"
