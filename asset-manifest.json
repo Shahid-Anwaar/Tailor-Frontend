@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Tailor-Master/static/css/main.c884fdfb.css",
-    "main.js": "/Tailor-Master/static/js/main.fcc0eb8d.js",
+    "main.js": "/Tailor-Master/static/js/main.307af308.js",
     "static/js/787.bf6da795.chunk.js": "/Tailor-Master/static/js/787.bf6da795.chunk.js",
     "static/media/login_image.jpg": "/Tailor-Master/static/media/login_image.18d2cec15bf870217f96.jpg",
     "static/media/NotoNastaliqUrdu-VariableFont_wght.woff2": "/Tailor-Master/static/media/NotoNastaliqUrdu-VariableFont_wght.11f179bccd77bc27322d.woff2",
@@ -13,11 +13,11 @@
     "static/media/doc.png": "/Tailor-Master/static/media/doc.249dfeebce405d4da801.png",
     "index.html": "/Tailor-Master/index.html",
     "main.c884fdfb.css.map": "/Tailor-Master/static/css/main.c884fdfb.css.map",
-    "main.fcc0eb8d.js.map": "/Tailor-Master/static/js/main.fcc0eb8d.js.map",
+    "main.307af308.js.map": "/Tailor-Master/static/js/main.307af308.js.map",
     "787.bf6da795.chunk.js.map": "/Tailor-Master/static/js/787.bf6da795.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c884fdfb.css",
-    "static/js/main.fcc0eb8d.js"
+    "static/js/main.307af308.js"
   ]
 }
