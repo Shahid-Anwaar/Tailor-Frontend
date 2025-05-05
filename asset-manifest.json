@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Tailor-Frontend/static/css/main.686ea663.css",
-    "main.js": "/Tailor-Frontend/static/js/main.2436e8fe.js",
+    "main.js": "/Tailor-Frontend/static/js/main.59bfead8.js",
     "static/js/787.bf6da795.chunk.js": "/Tailor-Frontend/static/js/787.bf6da795.chunk.js",
     "static/media/login_image.jpg": "/Tailor-Frontend/static/media/login_image.18d2cec15bf870217f96.jpg",
     "static/media/NotoNastaliqUrdu-VariableFont_wght.woff2": "/Tailor-Frontend/static/media/NotoNastaliqUrdu-VariableFont_wght.11f179bccd77bc27322d.woff2",
@@ -13,11 +13,11 @@
     "static/media/doc.png": "/Tailor-Frontend/static/media/doc.249dfeebce405d4da801.png",
     "index.html": "/Tailor-Frontend/index.html",
     "main.686ea663.css.map": "/Tailor-Frontend/static/css/main.686ea663.css.map",
-    "main.2436e8fe.js.map": "/Tailor-Frontend/static/js/main.2436e8fe.js.map",
+    "main.59bfead8.js.map": "/Tailor-Frontend/static/js/main.59bfead8.js.map",
     "787.bf6da795.chunk.js.map": "/Tailor-Frontend/static/js/787.bf6da795.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.686ea663.css",
-    "static/js/main.2436e8fe.js"
+    "static/js/main.59bfead8.js"
   ]
 }
