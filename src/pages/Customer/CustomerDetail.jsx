@@ -69,7 +69,7 @@ const CustomerDetail = () => {
     }
 
     return (
-        <div className="container-fluid">
+        <div className="container-fluid mt-4">
             <div className="row ">
                 <div className="col-12 mb-3">
                     <BasicBreadcrumbs items={BreadCrumbsList} />

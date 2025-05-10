@@ -201,15 +201,15 @@ export const AddCustomer = () => {
   }, []);
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid mt-4">
       <form onSubmit={handleSubmit}>
-        <div className="row">
+        <div className="row g-0">
           <div className="col-12 mb-3">
             <BasicBreadcrumbs items={BreadCrumbsList} />
           </div>
 
           {!loading ? <>
-            <div className="row">
+            <div className="row g-0 p-1">
               <div className="col-md-6 mt-2">
                 <TextField
                   label="Name"
@@ -278,8 +278,8 @@ export const AddCustomer = () => {
                   </Select>
                 </FormControl>
               </div>
-              {measurements.map((item) => (
-                <div key={item.id} className="col-lg-3 col-md-4 col-6 mt-2">
+              {measurements.map((item, index) => (
+                <div key={item.id} className={`${index % 2 == 0 ? "pe-1": "ps-1"} col-lg-3 col-md-4 col-6 mt-2`}>
                   <TextField
                     label={item.label}
                     type="number"

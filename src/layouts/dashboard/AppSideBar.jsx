@@ -30,7 +30,7 @@ function AppSideBar({ mobileOpen, handleDrawerToggle }) {
   const drawer = (
     <>
       <div className="text-center m-4">
-        <img src={SidebarLogo} alt={"Logo"} className="img-fluid" />
+        <img src={SidebarLogo} alt={"Logo"} width={120} height={120} className="img-fluid" />
       </div>
       <NavSection navConfig={nav_items} />
     </>

@@ -131,8 +131,8 @@ const EditProfile = ({ handleCloseModel }) => {
             <div className="Position_update">
               <StyledAvatar
                 alt="Profile Image"
-                src="https://img.freepik.com/free-photo/close-up-young-successful-man-smiling-camera-standing-casual-outfit-against-blue-background_1258-65479.jpg?ga=GA1.1.755892877.1726836900&semt=ais_incoming"
-              />
+                src={"https://scontent.flyp6-2.fna.fbcdn.net/v/t39.30808-6/434426820_122143393130051044_2078335917148030411_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=n7bLMNlihKYQ7kNvwFoOyH_&_nc_oc=Adk-FWTBV4qtIkHwzvCJqcNAxsDkKX-NOd1m0AUUvDhV0fwkX5FQkLrDV0uKIm_idTsVVl0qnpWYl7fSdZKTa4Qp&_nc_zt=23&_nc_ht=scontent.flyp6-2.fna&_nc_gid=JdAIkZ_LwVJSu6AVzL2Mhw&oh=00_AfK_aZg36e7Uyhv4shYyAJpd7V7dT5wQg66n-VubHJz4Sw&oe=682570E8"}
+                 />
               <input
                 accept="image/*"
                 style={{ display: "none" }}
