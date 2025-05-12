@@ -18,6 +18,7 @@ import Person3Icon from "@mui/icons-material/Person3";
 import { del_customer_by_id, get_customers_list } from "../../DAL/customers/customer";
 import { useSnackbar } from "notistack";
 import moment from "moment/moment";
+import { capitalize } from "lodash";
 
 const CustomerList = () => {
   const { setnavbarTitle } = useAdminContext();

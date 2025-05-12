@@ -26,6 +26,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import GooglePlacesAutocomplete from "../../components/AutoCompleteAddress";
 import { add_customer, edit_customer, get_single_customer_detail } from "../../DAL/customers/customer";
 import moment from "moment";
+import _, { capitalize } from "lodash";
 
 
 
@@ -144,6 +145,8 @@ export const AddCustomer = () => {
     }
 
     localInput.contact = phoneNumber;
+    localInput.name = _.startCase(_.lowerCase(localInput.name));
+    // localInput.name = capitalize(localInput.name);
     console.log("Data before Calling Api", localInput);
 
     if (params.id) {
@@ -209,8 +212,8 @@ export const AddCustomer = () => {
           </div>
 
           {!loading ? <>
-            <div className="row g-0 p-1">
-              <div className="col-md-6 mt-2">
+            <div className="row gx-0 gx-md-2 gy-2">
+              <div className="col-md-6">
                 <TextField
                   label="Name"
                   fullWidth
@@ -219,7 +222,7 @@ export const AddCustomer = () => {
                   required
                 />
               </div>
-              <div className="col-md-6 mt-2">
+              <div className="col-md-6">
                 <PhoneInput
                   enableSearch={true}
                   autoSelectCountry={false}
@@ -229,7 +232,7 @@ export const AddCustomer = () => {
                   onChange={handlePhoneChange}
                 />
               </div>
-              <div className="col-md-6 mt-3">
+              <div className="col-md-6">
                 <GooglePlacesAutocomplete
                   setSelectedLocation={setSelectedAddress}
                   label="Street Address"
@@ -245,7 +248,7 @@ export const AddCustomer = () => {
                 onChange={(e) => handleChange(e, "col_time")}
               />
             </div> */}
-              <div className="col-md-6 mt-2">
+              <div className="col-md-6">
                 <TextField
                   label="Last Date"
                   type="datetime-local"
