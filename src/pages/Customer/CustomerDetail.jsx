@@ -81,7 +81,7 @@ const CustomerDetail = () => {
                         }}
                     >
                         <div className="row mb-4 mx-3 mt-3 justify-content-center align-items-center user-profile-data">
-                            <div className="col-12 col-md-7 d-flex align-items-center">
+                            <div className="col-12 col-lg-6 d-flex align-items-center">
                                 {/* <img
                                     className="rounded-circle"
                                     height="75px"
@@ -97,7 +97,7 @@ const CustomerDetail = () => {
                                     src={user?.image || ""}
                                     sx={{ width: 75, height: 75 }}
                                 />
-                                <div className="ms-4">
+                                <div className="w-100 ms-4">
                                     <div className="w-100 d-flex justify-content-between align-items-center">
                                         <h2>{user?.name}</h2>
                                         <IconButton
