@@ -105,39 +105,6 @@ export const formatString = (str) => {
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize each word
     .join(" "); // Join the words with spaces
 };
-export const Meta_date_format = (date) => {
-  return moment(date).format("DD-MM-YYYY");
-};
-
-export const show_proper_words = (text) => {
-  let replace_string = "";
-  if (text) {
-    // Replace hyphens and underscores with spaces
-    replace_string = text.replace(/[-_]/g, " ");
-    // Capitalize the first letter of every word
-    replace_string = replace_string
-      .split(" ")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ");
-  }
-
-  return replace_string;
-};
-
-export function formatDate(dateString) {
-  return moment(dateString, "DD-MM-YYYY").format("YYYY-MM-DDTHH:mm:ss.SSS[Z]");
-}
-
-export const formatAmount = (amount) => {
-  if (!amount) return "0";
-  return amount > 1000000
-    ? `${(amount / 1000000).toFixed(2)}M`
-    : `${(amount / 1000).toFixed(2)}K`;
-};
-
-export const getIcon = (iconName, size = 24) => {
-  return <Icon icon={iconName} style={{ fontSize: `${size}px` }} />;
-};
 
 export const LightTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} />

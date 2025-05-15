@@ -3,7 +3,6 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { Button, CircularProgress, IconButton, TextField } from "@mui/material";
 import { useSnackbar } from "notistack";
-import { changePassword } from "../DAL/Edit_Profile/Profile";
 import CheckBoxes from "./GeneralComponents/CustomCheckBox";
 import { formatString, validateInputs } from "../utils/constant";
 

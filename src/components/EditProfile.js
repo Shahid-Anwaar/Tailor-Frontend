@@ -3,14 +3,9 @@ import { Button, Avatar, IconButton, CircularProgress } from "@mui/material";
 import { styled } from "@mui/system";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import { useSnackbar } from "notistack";
-// import { picBaseUrl } from "../config/config";
-import { Edit_Profile_Settings } from "../DAL/Edit_Profile/Profile";
 import Iconify from "../components/Iconify";
 import { useAdminContext } from "../Hooks/AdminContext";
-import PhoneInput from "react-phone-number-validation";
-import { formatString, validateInputs } from "../utils/constant";
 import FormInput from "./GeneralComponents/FormInput";
-import { adminIcon } from "../assets";
 
 const StyledAvatar = styled(Avatar)({
   width: "100px",
