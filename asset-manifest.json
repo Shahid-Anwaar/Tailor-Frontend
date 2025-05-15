@@ -1,23 +1,20 @@
 {
   "files": {
-    "main.css": "/Tailor-Master/static/css/main.edf9905d.css",
-    "main.js": "/Tailor-Master/static/js/main.d35ea097.js",
+    "main.css": "/Tailor-Master/static/css/main.9f0add6f.css",
+    "main.js": "/Tailor-Master/static/js/main.abd4c5b2.js",
     "static/js/787.bf6da795.chunk.js": "/Tailor-Master/static/js/787.bf6da795.chunk.js",
     "static/media/login_image.jpg": "/Tailor-Master/static/media/login_image.18d2cec15bf870217f96.jpg",
     "static/media/NotoNastaliqUrdu-VariableFont_wght.woff2": "/Tailor-Master/static/media/NotoNastaliqUrdu-VariableFont_wght.11f179bccd77bc27322d.woff2",
-    "static/media/admin.png": "/Tailor-Master/static/media/admin.130b1832a556ab87c2c9.png",
-    "static/media/logo-1.png": "/Tailor-Master/static/media/logo-1.5735d5c7422c95c30b0f.png",
     "static/media/search icon.png": "/Tailor-Master/static/media/search icon.c13e29b2b77e4eea4baf.png",
-    "static/media/logo.jpg": "/Tailor-Master/static/media/logo.1dba2a053a0c24eab771.jpg",
     "static/media/csv.png": "/Tailor-Master/static/media/csv.750a499921bec3969c21.png",
     "static/media/doc.png": "/Tailor-Master/static/media/doc.249dfeebce405d4da801.png",
     "index.html": "/Tailor-Master/index.html",
-    "main.edf9905d.css.map": "/Tailor-Master/static/css/main.edf9905d.css.map",
-    "main.d35ea097.js.map": "/Tailor-Master/static/js/main.d35ea097.js.map",
+    "main.9f0add6f.css.map": "/Tailor-Master/static/css/main.9f0add6f.css.map",
+    "main.abd4c5b2.js.map": "/Tailor-Master/static/js/main.abd4c5b2.js.map",
     "787.bf6da795.chunk.js.map": "/Tailor-Master/static/js/787.bf6da795.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.edf9905d.css",
-    "static/js/main.d35ea097.js"
+    "static/css/main.9f0add6f.css",
+    "static/js/main.abd4c5b2.js"
   ]
 }
