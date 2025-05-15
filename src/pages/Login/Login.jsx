@@ -121,7 +121,7 @@ const Login = () => {
   return (
     <>
       <div className="full-height-container">
-        <div className="row g-0">
+        <div className="h-100 row g-0">
           <div
             className="col-md-7 overlay-container d-none d-md-block"
             style={{
@@ -135,7 +135,7 @@ const Login = () => {
             <div className="div-img-overlay"></div>
           </div>
 
-          <div className="col-md-5 d-flex align-items-center" id="handle_move">
+          <div className="col-md-5 d-flex align-items-center justify-content-center" id="handle_move">
             <div className="p-5 py-0 card-body">
               <div className="d-flex flex-column mb-4">
                 <div className="text-center ">
@@ -143,6 +143,7 @@ const Login = () => {
                     src={loginLogo}
                     className="img-fluid image-width"
                     alt="Login Logo"
+                    width={150}
                   />
                 </div>
               </div>
