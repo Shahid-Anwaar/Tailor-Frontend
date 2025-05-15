@@ -20,7 +20,7 @@ export default function CustomPopover({
   setRowData,
 }) {
   const theme = useTheme();
-  const isMdScreen = useMediaQuery(theme.breakpoints.up("md"));
+  const isSmScreen = useMediaQuery(theme.breakpoints.up("sm"));
 
   return (
     <Dialog
@@ -34,7 +34,7 @@ export default function CustomPopover({
       className={className}
       PaperProps={{
         style: {
-          minWidth: isMdScreen ? (width ? width : "550px") : "",
+          minWidth: isSmScreen ? (width ? width : "550px") : "100%",
           borderRadius: "30px",
           border: "1px solid rgb(119, 119, 119)",
           maxHeight: "90vh",

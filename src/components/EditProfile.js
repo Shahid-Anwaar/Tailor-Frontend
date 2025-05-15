@@ -155,7 +155,7 @@ const EditProfile = ({ handleCloseModel }) => {
           <hr className="" />
           <form onSubmit={handleSubmit}>
             <div className="form-container row ">
-              <div className="col-6">
+              <div className="col-6 pe-1">
                 <FormInput
                   label="First Name"
                   fullWidth
@@ -177,7 +177,7 @@ const EditProfile = ({ handleCloseModel }) => {
                   }}
                 />
               </div>
-              <div className="col-6">
+              <div className="col-6 ps-1">
                 <FormInput
                   label="Last Name"
                   fullWidth
@@ -259,9 +259,9 @@ const EditProfile = ({ handleCloseModel }) => {
             <div className="d-flex justify-content-end">
               <div className="d-flex add-button">
                 <Button
-                  variant="contained"
+                  variant="outlined"
                   onClick={handleCloseModel}
-                  className="popover-cancel-button"
+                  className="delete-cancel-button"
                 >
                   Cancel
                 </Button>

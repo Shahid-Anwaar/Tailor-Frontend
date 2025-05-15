@@ -128,7 +128,7 @@ export default function ProfileIcon({
         isClosePop={setModelState}
         handleClose={handleCloseModel}
         title="Edit Profile"
-        width={"600px"}
+        // width={"600px"}
         componentToPassDown={
           <EditProfile handleCloseModel={handleCloseModel} />
         }

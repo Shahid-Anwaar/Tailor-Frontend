@@ -186,16 +186,15 @@ html {
 
 
 .custom-popover-container {
-  padding: 25px 30px;
+  padding: 25px 25px;
   background-color: var(--main-card-bg-color) !important;
   display: flex;
   flex-direction: column;
   max-height: 90vh !important;
-
 }
 
 .scrollable-content {
-  padding: 0px 10px;
+  padding: 0px;
   /* overflow-y: auto; */
   flex: 1;
 }
@@ -232,25 +231,14 @@ html {
   color: #ffffff !important;
 }
 
-.popover-cancel-button {
-  background-color: var(--icon-color) !important;
-  color: #fff !important;
-  margin-left: 10px !important;
-  text-transform: capitalize !important;
-  font-size: 17px !important;
-  padding: 0px 18px !important;
-  box-shadow: none !important;
-  border-radius: 8px !important;
-}
-
 .popover-apply-button {
   /* border-radius: 7px !important; */
   margin-left: 10px !important;
   text-transform: capitalize !important;
-  font-size: 17px !important;
+  font-size: 15px !important;
   padding: 5px 20px !important;
   box-shadow: none !important;
-  border-radius: 8px !important;
+  border-radius: 5px !important;
   min-width: 90px !important;
 }
 
