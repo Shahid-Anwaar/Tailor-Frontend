@@ -5,8 +5,6 @@ import { Slide } from "@mui/material";
 import { SnackbarProvider } from "notistack";
 import { Helmet } from "react-helmet-async";
 import "./assets/css/style.css";
-import "./assets/css/customer.css";
-import "./assets/css/home.css";
 import "react-phone-input-2/lib/style.css";
 import "react-tagsinput/react-tagsinput.css";
 import { ContextAdmin } from "./Hooks/AdminContext";

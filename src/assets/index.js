@@ -3,13 +3,10 @@ import EventBusyIcon from "@mui/icons-material/EventBusy";
 
 export { default as Download } from "./images/download.jpg";
 export { default as UserIcon } from "./images/user.png";
-export { default as adminIcon } from "./images/admin.png";
 export { default as not_found } from "./images/not_found.jpg";
 export { default as loginImage } from "./images/login_image.jpg";
 export { default as loginLogo } from "./images/3.jpeg";
-export { default as Logo } from "./images/logo.jpg";
 export { default as SidebarLogo } from "./images/3.jpeg";
-export { default as Transparent_Logo } from "./images/logo-1.png";
 
 export { default as csvImage } from "./images/icons/csv.png";
 export { default as docImage } from "./images/icons/doc.png";

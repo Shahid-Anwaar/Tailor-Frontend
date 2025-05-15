@@ -14,19 +14,14 @@ import {
   styled,
   CircularProgress,
 } from "@mui/material";
-import CustomTextFieldUrdu from "../../components/CustomTextFieldUrdu/CustomTextFieldUrdu";
 import { useSnackbar } from "notistack";
 import PhoneInput from "react-phone-number-validation";
-import FormInput from "../../components/GeneralComponents/FormInput";
-import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useAdminContext } from "../../Hooks/AdminContext";
 import BasicBreadcrumbs from "../../components/GeneralComponents/BreadCrumbs";
-import FileUploadIcon from "@mui/icons-material/FileUpload";
 import { useNavigate, useParams } from "react-router-dom";
 import GooglePlacesAutocomplete from "../../components/AutoCompleteAddress";
 import { add_customer, edit_customer, get_single_customer_detail } from "../../DAL/customers/customer";
-import moment from "moment";
-import _, { capitalize } from "lodash";
+import _ from "lodash";
 
 
 

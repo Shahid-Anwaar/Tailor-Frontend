@@ -4,7 +4,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import { CircularProgress } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import MUICustomTabs from "../../components/MUICustomTabs";
 import BasicBreadcrumbs from "../../components/GeneralComponents/BreadCrumbs";
 import { useAdminContext } from "../../Hooks/AdminContext";
 import moment from "moment";
@@ -123,7 +122,11 @@ const CustomerDetail = () => {
                                 <h6>Phone Number:</h6>
                             </div>
                             <div className="col-7 col-md-6 col-lg-3 text-muted">
-                                {user?.contact}
+                                {user?.contact ? (
+                                    <a href={`tel:${user.contact}`} className="customer-contact text-decoration-none">
+                                        {user.contact}
+                                    </a>
+                                ) : "N/A"}
                             </div>
                             <div className="col-5 col-md-6 col-lg-3 mb-3">
                                 <h6>Collected Time:</h6>
