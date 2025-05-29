@@ -226,6 +226,39 @@ html {
   font-size: 20px !important;
 }
 
+.table-head-sticky{
+  z-index: 2 !important;
+  position: relative;
+  /* position: sticky;
+  top: 80px;
+  z-index: 44; */
+}
+
+.table-name-cell-head{
+  position: sticky !important;
+  z-index: 4 !important;
+  left: -10px;
+  background-color: rgb(19, 19, 19);
+}
+
+.table-name-cell{
+  position: sticky;
+  z-index: 1;
+  left: -10px;
+}
+
+.table-name-cell-bg{
+  background-color: rgb(26, 25, 25);
+}
+
+.MuiTableCell-head {
+  background-color: #121212 !important;
+  color: white !important;
+  z-index: 1;
+  top: 0;
+}
+
+
 .add-button svg {
   fill: #000000 !important;
   color: #ffffff !important;

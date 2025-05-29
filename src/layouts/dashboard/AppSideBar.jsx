@@ -86,9 +86,9 @@ function AppSideBar({ mobileOpen, handleDrawerToggle }) {
         sx={{
           flexGrow: 1,
           p: 1,
-          paddingBottom: {
-            md: "100px",
-          },
+          // paddingBottom: {
+          //   md: "100px",
+          // },
           minHeight: "100vh",
           width: "100%",
           overflow: "auto",

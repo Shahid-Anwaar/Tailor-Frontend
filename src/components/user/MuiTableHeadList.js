@@ -59,14 +59,15 @@ export default function MuiTableHeadList({
   }, [headLabel, rowCount, numSelected]);
 
   return (
-    <TableHead className="table-heading mt-5">
+    <TableHead className="table-heading mt-5 table-head-sticky">
       <TableRow>
         {tableHead.map((headCell) => (
           <TableCell
             key={headCell.id}
             align={headCell.alignRight ? "right" : "left"}
             sortDirection={orderBy === headCell.id ? order : false}
-            className="text-nowrap fw-semibold table-heading-text"
+            // className="text-nowrap fw-semibold table-heading-text"
+            className={`${headCell.label === "Customer Name" ? "table-name-cell-head": ""} text-nowrap fw-semibold table-heading-text`}
           >
             <TableSortLabel
               hideSortIcon

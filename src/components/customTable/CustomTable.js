@@ -209,7 +209,7 @@ export default function CustomTable({
   const isUserNotFound = filteredUsers.length === 0;
   return (
     <Card
-      style={{ overflowX: "auto" }}
+      style={{ overflowX: "hidden" }}
       className={`mui-without-bg-custom-table table-container ${className}`}
     >
       {custom_search ? (
@@ -316,8 +316,8 @@ export default function CustomTable({
         </>
       )}
 
-      <TableContainer sx={{ minWidth: 800 }}>
-        <Table size="small">
+      <TableContainer sx={{ minWidth: 300, maxHeight: "calc(100vh - 320px)" }}>
+        <Table stickyHeader size="small">
           <MuiTableHeadList
             order={order}
             orderBy={orderBy}
