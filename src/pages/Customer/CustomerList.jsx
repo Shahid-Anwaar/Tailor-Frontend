@@ -68,7 +68,7 @@ const CustomerList = () => {
       id: "col_time",
       label: "Collected Time",
       renderData: (row) => (
-        <div>{moment(row?.col_time).format('hh:mm A - DD/MM/YYYY')}</div>
+        <div>{row?.col_time ? moment(row?.col_time).format('hh:mm A - DD/MM/YYYY') : "N/A"}</div>
       ),
     },
     {
@@ -248,9 +248,7 @@ const CustomerList = () => {
     const response = await get_customers_list();
     console.log(response, "API response.......");
     if (response.status == 200 || response.status == 201) {
-      setUserList((list)=>{
-        return [...list, ...response?.data]
-      });
+      setUserList(response?.data);
     } else {
       enqueueSnackbar("Cannot get the List of Customers", { variant: "error" });
     }
