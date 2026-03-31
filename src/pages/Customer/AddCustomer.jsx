@@ -72,15 +72,6 @@ export const AddCustomer = () => {
     const checked = e.target.checked;
     setLocalInput((prev) => ({ ...prev, [name]: checked }));
   };
-  const [selectedAddress, setSelectedAddress] = useState(null);
-
-  const fileChangedHandler = (e) => {
-    setProfileImage(URL.createObjectURL(e.target.files[0]));
-    setLocalInput({
-      ...localInput,
-      ["image"]: e.target.files[0],
-    });
-  };
 
   const measurements = [
     { label: "قمیض", id: "kameez" },
@@ -127,13 +118,6 @@ export const AddCustomer = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(selectedAddress, phoneNumber, "hihihihih");
-
-    if (selectedAddress?.formatted_address) {
-      localInput.address = selectedAddress?.formatted_address || "";
-    } else {
-      localInput.address = selectedAddress || "";
-    }
 
     localInput.contact = phoneNumber;
     localInput.name = _.startCase(_.lowerCase(localInput.name));
@@ -172,7 +156,6 @@ export const AddCustomer = () => {
 
       let data = { ...response?.data, last_date: formattedDate };
       setLocalInput(data);
-      setSelectedAddress(data.address);
       setTimeout(() => {
         setPhoneNumber(data.contact);
       }, 10);
@@ -224,11 +207,12 @@ export const AddCustomer = () => {
                 />
               </div>
               <div className="col-md-6">
-                <GooglePlacesAutocomplete
-                  setSelectedLocation={setSelectedAddress}
-                  label="Street Address"
-                  required={true}
-                  defaultValue={selectedAddress}
+                <TextField
+                  label="Address"
+                  fullWidth
+                  value={localInput.address}
+                  onChange={(e) => handleChange(e, "address")}
+                  required
                 />
               </div>
               {/* <div className="col-md-6 mt-2">

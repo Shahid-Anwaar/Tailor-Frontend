@@ -5,7 +5,7 @@ import axios from "axios";
 axios.defaults.headers.post["Content-Type"] = "application/json";
 
 // const baseUrl = "https://cors-anywhere.herokuapp.com/";
-const baseUrl = "https://tailor-backend-production.up.railway.app/";
+const baseUrl = "https://tailor-backend.netlify.app/";
 export async function invokeApi({
   path,
   method = "GET",
