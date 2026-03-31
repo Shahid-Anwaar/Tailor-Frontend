@@ -3,7 +3,6 @@ import { Card, Chip, Tooltip, Avatar, IconButton } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import { CircularProgress } from "@mui/material";
-import { makeStyles } from "@mui/styles";
 import BasicBreadcrumbs from "../../components/GeneralComponents/BreadCrumbs";
 import { useAdminContext } from "../../Hooks/AdminContext";
 import moment from "moment";
@@ -11,18 +10,10 @@ import StatusChip from "../../theme/chip";
 import EditIcon from "@mui/icons-material/Edit";
 import { get_single_customer_detail } from "../../DAL/customers/customer";
 
-const useStyles = makeStyles(() => ({
-    loading: {
-        marginLeft: "50%",
-        marginTop: "20%",
-    },
-}));
-
 const CustomerDetail = () => {
     const params = useParams();
     const { setnavbarTitle } = useAdminContext();
     const member_id = useParams();
-    const classes = useStyles();
     const { enqueueSnackbar } = useSnackbar();
     const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(true);
@@ -64,7 +55,7 @@ const CustomerDetail = () => {
     }, [params.id]);
 
     if (isLoading === true) {
-        return <CircularProgress className={classes.loading} color="primary" />;
+        return <CircularProgress sx={{ marginLeft: "50%", marginTop: "20%" }} color="primary" />;
     }
 
     return (
