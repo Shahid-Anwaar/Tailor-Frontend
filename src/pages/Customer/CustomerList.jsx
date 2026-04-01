@@ -87,82 +87,82 @@ const CustomerList = () => {
         <StatusChip status={row.status} type="activeInactive" />
       ),
     },
-    {
-      id: "kameez",
-      label: "قمیض",
-    },
-    {
-      id: "bazoo",
-      label: "بازو",
-    },
-    {
-      id: "teera",
-      label: "تیرا",
-    },
-    {
-      id: "gla",
-      label: "گلہ ",
-    },
-    {
-      id: "chati",
-      label: "چھاتی",
-    },
-    {
-      id: "kmr",
-      label: "کمر",
-    },
-    {
-      id: "geera",
-      label: "گھیرا",
-    },
-    {
-      id: "shalwar",
-      label: "شلوار",
-    },
-    {
-      id: "pancha",
-      label: "پانچہ",
-    },
-    {
-      id: "front",
-      label: "فرنٹ",
-    },
-    {
-      id: "side",
-      label: "سائیڈ",
-    },
-    {
-      id: "zip",
-      label: "زپ",
-    },
-    {
-      id: "colr",
-      label: "کالر",
-      renderData: (row) => (
-        <div>{row.colr ? "✔️" : "❌"}</div>
-      ),
-    },
-    {
-      id: "ban",
-      label: "بین",
-      renderData: (row) => (
-        <div>{row.ban ? "✔️" : "❌"}</div>
-      ),
-    },
-    {
-      id: "kaf",
-      label: "کف",
-      renderData: (row) => (
-        <div>{row.kaf ? "✔️" : "❌"}</div>
-      ),
-    },
-    {
-      id: "pleat",
-      label: "پلیٹ",
-      renderData: (row) => (
-        <div>{row.pleat ? "✔️" : "❌"}</div>
-      ),
-    },
+    // {
+    //   id: "kameez",
+    //   label: "قمیض",
+    // },
+    // {
+    //   id: "bazoo",
+    //   label: "بازو",
+    // },
+    // {
+    //   id: "teera",
+    //   label: "تیرا",
+    // },
+    // {
+    //   id: "gla",
+    //   label: "گلہ ",
+    // },
+    // {
+    //   id: "chati",
+    //   label: "چھاتی",
+    // },
+    // {
+    //   id: "kmr",
+    //   label: "کمر",
+    // },
+    // {
+    //   id: "geera",
+    //   label: "گھیرا",
+    // },
+    // {
+    //   id: "shalwar",
+    //   label: "شلوار",
+    // },
+    // {
+    //   id: "pancha",
+    //   label: "پانچہ",
+    // },
+    // {
+    //   id: "front",
+    //   label: "فرنٹ",
+    // },
+    // {
+    //   id: "side",
+    //   label: "سائیڈ",
+    // },
+    // {
+    //   id: "zip",
+    //   label: "زپ",
+    // },
+    // {
+    //   id: "colr",
+    //   label: "کالر",
+    //   renderData: (row) => (
+    //     <div>{row.colr ? "✔️" : "❌"}</div>
+    //   ),
+    // },
+    // {
+    //   id: "ban",
+    //   label: "بین",
+    //   renderData: (row) => (
+    //     <div>{row.ban ? "✔️" : "❌"}</div>
+    //   ),
+    // },
+    // {
+    //   id: "kaf",
+    //   label: "کف",
+    //   renderData: (row) => (
+    //     <div>{row.kaf ? "✔️" : "❌"}</div>
+    //   ),
+    // },
+    // {
+    //   id: "pleat",
+    //   label: "پلیٹ",
+    //   renderData: (row) => (
+    //     <div>{row.pleat ? "✔️" : "❌"}</div>
+    //   ),
+    // },
     {
       id: "action",
       label: "Action",

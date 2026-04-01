@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import {
   Button,
   TextField,
@@ -143,7 +143,7 @@ export const AddCustomer = () => {
     },
   ];
 
-  async function getSingleCustomerDetail(id) {
+  const getSingleCustomerDetail = useCallback(async (id) => {
     setLoading(true);
     const response = await get_single_customer_detail(id);
     console.log(response, "API response.......");
@@ -161,7 +161,7 @@ export const AddCustomer = () => {
       enqueueSnackbar("Cannot get the Data of single Customers", { variant: "error" });
     }
     setLoading(false);
-  }
+  }, [enqueueSnackbar]);
 
   useEffect(() => {
     if (params.id) {
@@ -169,11 +169,11 @@ export const AddCustomer = () => {
     } else {
       setLoading(false);
     }
-  }, [params?.id]);
+  }, [params?.id, getSingleCustomerDetail]);
 
   useEffect(() => {
     setnavbarTitle("Customer Management");
-  }, []);
+  }, [setnavbarTitle]);
 
   return (
     <div className="container-fluid mt-4">

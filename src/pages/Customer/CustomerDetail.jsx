@@ -46,7 +46,7 @@ const CustomerDetail = () => {
         if (params.id) {
             getSingleCustomerDetail(params.id);
         }
-    }, [params.id]);
+    }, [params.id, getSingleCustomerDetail]);
 
     if (isLoading === true) {
         return <CircularProgress sx={{ marginLeft: "50%", marginTop: "20%" }} color="primary" />;

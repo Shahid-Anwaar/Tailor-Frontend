@@ -139,12 +139,6 @@ const StatusChip = ({ status, type, absent, discounted_minutes }) => {
           color: "#4CAF50",
           backgroundColor: "transparent",
         };
-      case "Pending":
-        return {
-          border: "1px solid #FFC107",
-          color: "#FFC107",
-          backgroundColor: "transparent",
-        };
       case "Free":
         return {
           border: "1px solid #5792C9",
