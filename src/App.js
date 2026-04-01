@@ -8,7 +8,7 @@ import "./assets/css/style.css";
 import "react-phone-input-2/lib/style.css";
 import "react-tagsinput/react-tagsinput.css";
 import { ContextAdmin } from "./Hooks/AdminContext";
-import { loginLogo, Logo } from "./assets";
+import { loginLogo } from "./assets";
 
 function App() {
   const notistackRef = createRef();

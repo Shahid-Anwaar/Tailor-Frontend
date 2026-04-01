@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Card, Chip, Tooltip, Avatar, IconButton } from "@mui/material";
+import React, { useEffect, useState, useCallback } from "react";
+import { Card, Avatar, IconButton } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import { CircularProgress } from "@mui/material";
@@ -13,16 +13,10 @@ import { get_single_customer_detail } from "../../DAL/customers/customer";
 const CustomerDetail = () => {
     const params = useParams();
     const { setnavbarTitle } = useAdminContext();
-    const member_id = useParams();
     const { enqueueSnackbar } = useSnackbar();
     const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(true);
-    const [tabValue, setTabValue] = useState(0);
     const [user, setUser] = useState();
-
-    const handleChangeTab = (event, newValue) => {
-        setTabValue(newValue);
-    };
 
     const BreadCrumbsList = [
         {
@@ -37,16 +31,16 @@ const CustomerDetail = () => {
         },
     ];
 
-    async function getSingleCustomerDetail(id) {
+    const getSingleCustomerDetail = useCallback(async (id) => {
         const response = await get_single_customer_detail(id);
         console.log(response, "API response.......");
-        if (response.status == 200 || response.status == 201) {
+        if (response.status === 200 || response.status === 201) {
             setUser(response?.data);
         } else {
             enqueueSnackbar("Cannot get the Detail of Customer", { variant: "error" });
         }
         setIsLoading(false);
-    }
+    }, [enqueueSnackbar]);
 
     useEffect(() => {
         if (params.id) {

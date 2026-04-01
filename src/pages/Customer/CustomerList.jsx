@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import Iconify from "../../components/Iconify";
+import React, { useEffect, useState, useCallback } from "react";
 import { useAdminContext } from "../../Hooks/AdminContext";
 import {
   Button,
@@ -18,7 +17,6 @@ import Person3Icon from "@mui/icons-material/Person3";
 import { del_customer_by_id, get_customers_list } from "../../DAL/customers/customer";
 import { useSnackbar } from "notistack";
 import moment from "moment/moment";
-import { capitalize } from "lodash";
 
 const CustomerList = () => {
   const { setnavbarTitle } = useAdminContext();
@@ -228,12 +226,23 @@ const CustomerList = () => {
 
   useEffect(() => {
     setnavbarTitle("Customer Management");
-  }, []);
+  }, [setnavbarTitle]);
+
+  const getCustomersList = useCallback(async () => {
+    const response = await get_customers_list();
+    console.log(response, "API response.......");
+    if (response.status === 200 || response.status === 201) {
+      setUserList(response?.data);
+    } else {
+      enqueueSnackbar("Cannot get the List of Customers", { variant: "error" });
+    }
+    setLoading(false);
+  }, [enqueueSnackbar]);
 
   async function deleteCustomerById(id) {
     const response = await del_customer_by_id(id);
     console.log(response, "API response.......");
-    if (response.status == 200 || response.status == 201) {
+    if (response.status === 200 || response.status === 201) {
       setUserList((prevList) => {
         return prevList.filter((user) => {
           return user._id !== selectedUser._id;
@@ -244,20 +253,10 @@ const CustomerList = () => {
       enqueueSnackbar("Cannot get the List of Customers", { variant: "error" });
     }
   }
-  async function getCustomersList() {
-    const response = await get_customers_list();
-    console.log(response, "API response.......");
-    if (response.status == 200 || response.status == 201) {
-      setUserList(response?.data);
-    } else {
-      enqueueSnackbar("Cannot get the List of Customers", { variant: "error" });
-    }
-    setLoading(false);
-  }
 
   useEffect(() => {
     getCustomersList();
-  }, []);
+  }, [getCustomersList]);
 
   return (
     <div className="mt-4">

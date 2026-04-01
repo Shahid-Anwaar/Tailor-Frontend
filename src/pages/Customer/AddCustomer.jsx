@@ -15,7 +15,6 @@ import PhoneInput from "react-phone-number-validation";
 import { useAdminContext } from "../../Hooks/AdminContext";
 import BasicBreadcrumbs from "../../components/GeneralComponents/BreadCrumbs";
 import { useNavigate, useParams } from "react-router-dom";
-import GooglePlacesAutocomplete from "../../components/AutoCompleteAddress";
 import { add_customer, edit_customer, get_single_customer_detail } from "../../DAL/customers/customer";
 import _ from "lodash";
 
@@ -31,7 +30,6 @@ export const AddCustomer = () => {
     
     setPhoneNumber(value);
   };
-  const [file, setProfileImage] = useState();
   const params = useParams();
   const navigate = useNavigate();
 
@@ -97,7 +95,7 @@ export const AddCustomer = () => {
 
   async function handleAddCustomer(data) {
     const response = await add_customer(data);
-    if (response.status == 200 || response.status == 201) {
+    if (response.status === 200 || response.status === 201) {
       enqueueSnackbar("SuccessFully Added", { variant: "success" });
       navigate("/customer-list");
     } else {
@@ -108,7 +106,7 @@ export const AddCustomer = () => {
 
   async function handleEditCustomer(customerId, data) {
     const response = await edit_customer(customerId, data);
-    if (response.status == 200 || response.status == 201) {
+    if (response.status === 200 || response.status === 201) {
       enqueueSnackbar("SuccessFully Edited", { variant: "success" });
       navigate("/customer-list");
     } else {
@@ -149,7 +147,7 @@ export const AddCustomer = () => {
     setLoading(true);
     const response = await get_single_customer_detail(id);
     console.log(response, "API response.......");
-    if (response.status == 200 || response.status == 201) {
+    if (response.status === 200 || response.status === 201) {
       const formattedDate = response?.data?.last_date
         ? new Date(response?.data.last_date).toISOString().slice(0, 16)
         : '';
@@ -257,7 +255,7 @@ export const AddCustomer = () => {
                 </FormControl>
               </div>
               {measurements.map((item, index) => (
-                <div key={item.id} className={`${index % 2 == 0 ? "pe-1": "ps-1"} col-lg-3 col-md-4 col-6 mt-2`}>
+                <div key={item.id} className={`${index % 2 === 0 ? "pe-1": "ps-1"} col-lg-3 col-md-4 col-6 mt-2`}>
                   <TextField
                     label={item.label}
                     type="number"

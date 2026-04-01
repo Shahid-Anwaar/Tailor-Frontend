@@ -11,13 +11,7 @@ import {
   OutlinedInput,
   TextField,
 } from "@mui/material";
-import { _admin_login_api } from "../../../DAL/Login/Auth";
-import { _set_token_in_localStorage } from "../../../local_storage/local_storage";
-
 import { useSnackbar } from "notistack";
-import { formatString, validateInputs } from "../../../utils/constant";
-
-const RequiredInputFields = ["email", "password"];
 
 const LoginForm = ({ setFormState }) => {
   const navigate = useNavigate();
@@ -45,13 +39,13 @@ const LoginForm = ({ setFormState }) => {
   const handleSubmitLogin = async (e) => {
     e.preventDefault();
     console.log(inputs, "my inputs");
-    if (inputs.email == "tailor@gmail.com" && inputs.password == "123") {
+    if (inputs.email === "tailor@gmail.com" && inputs.password === "123") {
       localStorage.setItem("email", inputs.email);
       navigate(`/customer-list`, { replace: true });
       enqueueSnackbar("Login Successful", { variant: "success" });
-    } else if (inputs.email == "tailor@gmail.com") {
+    } else if (inputs.email === "tailor@gmail.com") {
       enqueueSnackbar("Login Failed! please enter correct Password", { variant: "error" });
-    } else if (inputs.password == "123") {
+    } else if (inputs.password === "123") {
       enqueueSnackbar("Login Failed! please enter correct Email", { variant: "error" });
     } else {
       enqueueSnackbar("Login Failed! please enter correct email & Password", { variant: "error" });
