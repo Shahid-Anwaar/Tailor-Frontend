@@ -1,6 +1,5 @@
 {
-  "homepage": "https://shahid-anwaar.github.io/Tailor-Master",
-  "name": "Tailor Master",
+  "name": "tailor-master",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
