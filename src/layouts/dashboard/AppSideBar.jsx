@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Toolbar, Drawer, Divider, Box, Tooltip } from "@mui/material";
+import { useEffect } from "react";
+import { Toolbar, Drawer, Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import NavSection from "./NavSection";
 import { SideBarConfig } from "./SideBarConfig";
@@ -8,23 +8,23 @@ import { SidebarLogo } from "../../assets";
 const drawerWidth = 260;
 
 function AppSideBar({ mobileOpen, handleDrawerToggle }) {
-  const [showScrollArrow, setShowScrollArrow] = useState(false);
+  // const [showScrollArrow, setShowScrollArrow] = useState(false);
 
   let nav_items = SideBarConfig();
 
-  const handleScrollTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
+  // const handleScrollTop = () => {
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: "smooth",
+  //   });
+  // };
 
   function handleScroll() {
-    const isScrolled =
-      (window.pageYOffset ||
-        document.documentElement.scrollTop ||
-        document.body.scrollTop) > window.innerHeight;
-    setShowScrollArrow(isScrolled);
+    // const isScrolled =
+    //   (window.pageYOffset ||
+    //     document.documentElement.scrollTop ||
+    //     document.body.scrollTop) > window.innerHeight;
+    // setShowScrollArrow(isScrolled);
   }
 
   const drawer = (

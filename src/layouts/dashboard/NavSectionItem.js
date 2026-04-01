@@ -6,10 +6,10 @@ import {
   useLocation,
 } from "react-router-dom";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
-import { _logout } from "../../DAL/Login/Auth";
+// import { _logout } from "../../DAL/Login/Auth";
 
 export default function NavSectionItem({ data, searchInput }) {
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
   const [openDropdown, setOpenDropdown] = useState(false);
   const [itemData, setItemData] = useState({});
@@ -55,7 +55,7 @@ export default function NavSectionItem({ data, searchInput }) {
   };
 
   const HandleLogoutClicked = () => {
-    setOpen(true);
+    // setOpen(true);
   };
 
   useEffect(() => {

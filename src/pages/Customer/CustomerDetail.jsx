@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import { CircularProgress } from "@mui/material";
 import BasicBreadcrumbs from "../../components/GeneralComponents/BreadCrumbs";
-import { useAdminContext } from "../../Hooks/AdminContext";
+// import { useAdminContext } from "../../Hooks/AdminContext";
 import moment from "moment";
 import StatusChip from "../../theme/chip";
 import EditIcon from "@mui/icons-material/Edit";
@@ -12,7 +12,7 @@ import { get_single_customer_detail } from "../../DAL/customers/customer";
 
 const CustomerDetail = () => {
     const params = useParams();
-    const { setnavbarTitle } = useAdminContext();
+    // const { setnavbarTitle } = useAdminContext();
     const { enqueueSnackbar } = useSnackbar();
     const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(true);

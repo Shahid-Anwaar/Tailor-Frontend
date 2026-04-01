@@ -3,24 +3,10 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { Button, CircularProgress, IconButton, TextField } from "@mui/material";
 import { useSnackbar } from "notistack";
-import CheckBoxes from "./GeneralComponents/CustomCheckBox";
-import { formatString, validateInputs } from "../utils/constant";
-
-const requiredFields = [
-  "email",
-  "old_password",
-  "new_password",
-  "confirm_password",
-];
 
 const ChangePassword = ({ handleClose }) => {
   const { enqueueSnackbar } = useSnackbar();
-  const RadioButtons = [
-    { label: "Logout from other devices", value: "other" },
-    { label: "Logout from all devices", value: "all" },
-  ];
-  const [DevicePreference, setDevicePreference] = useState("other");
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [oldPasswordVisibility, setOldPasswordVisibility] = useState(true);
@@ -38,13 +24,6 @@ const ChangePassword = ({ handleClose }) => {
   };
   const showOrHideOldPassword = () => {
     setOldPasswordVisibility(!oldPasswordVisibility);
-  };
-
-  const formData = {
-    email: localStorage.getItem("email"),
-    old_password: oldPassword,
-    new_password: newPassword,
-    confirm_password: confirmPassword,
   };
 
   const handleSubmit = async (e) => {

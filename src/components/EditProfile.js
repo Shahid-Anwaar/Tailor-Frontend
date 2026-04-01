@@ -14,18 +14,10 @@ const StyledAvatar = styled(Avatar)({
   position: "relative",
 });
 
-const requiredStringInputFields = [
-  "employee_id",
-  "first_name",
-  "last_name",
-  "contact_number",
-  "address",
-];
-
 const EditProfile = ({ handleCloseModel }) => {
   const { setnavbarTitle } = useAdminContext();
   // const { userData, setUserData } = useUserData();
-  const [ProfileImage, setProfileImage] = useState();
+  // const [ProfileImage, setProfileImage] = useState();
 
   const [Data, setData] = useState({
     employee_id: "",
@@ -37,7 +29,7 @@ const EditProfile = ({ handleCloseModel }) => {
     image: null,
   });
   const { enqueueSnackbar } = useSnackbar();
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -86,7 +78,7 @@ const EditProfile = ({ handleCloseModel }) => {
   };
 
   const handleImageChange = (e) => {
-    setProfileImage(URL.createObjectURL(e.target.files[0]));
+    // setProfileImage(URL.createObjectURL(e.target.files[0]));
     setData((prevState) => ({
       ...prevState,
       image: e.target.files[0],

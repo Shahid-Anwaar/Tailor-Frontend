@@ -4,7 +4,7 @@ import AppSideBar from "./AppSideBar";
 import { useLocation } from "react-router-dom";
 import { CircularProgress } from "@mui/material";
 import { Helmet } from "react-helmet-async";
-import { loginLogo, Logo } from "../../assets";
+import { loginLogo } from "../../assets";
 
 export default function DashboardLayout() {
   const pathname = useLocation();

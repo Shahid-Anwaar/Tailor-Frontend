@@ -17,7 +17,7 @@ const LoginForm = ({ setFormState }) => {
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
   const [showPassword, setShowPassword] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading] = useState(false);
 
   const [inputs, setInputs] = useState({
     email: "",

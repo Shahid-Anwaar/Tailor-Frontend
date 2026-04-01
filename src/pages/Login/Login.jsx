@@ -5,17 +5,17 @@ import LoginForm from "./components/LoginForm";
 import EmailForm from "./components/EmailForm";
 import PinCodeForm from "./components/PinCodeForm";
 import ConfrimPassword from "./components/ConfrimPassword";
-import { _Code_Verification, _Email_Verification } from "../../DAL/Login/Auth";
+// import { _Code_Verification, _Email_Verification } from "../../DAL/Login/Auth";
 import { useSnackbar } from "notistack";
-import { _Reset_Admin_Password } from "../../DAL/Login/ResetPassword";
-import { SidebarLogo } from "../../assets";
-import { Icon } from "@iconify/react/dist/iconify.js";
+// import { _Reset_Admin_Password } from "../../DAL/Login/ResetPassword";
+// import { SidebarLogo } from "../../assets";
+// import { Icon } from "@iconify/react/dist/iconify.js";
 
 const Login = () => {
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
   const [formState, setFormState] = useState(-1);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleMove = () => {

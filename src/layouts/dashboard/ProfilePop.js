@@ -2,7 +2,6 @@ import { useState } from "react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import Divider from "@mui/material/Divider";
 import KeyIcon from "@mui/icons-material/Key";
 import EditNoteIcon from "@mui/icons-material/EditNote";
 import ChangePassword from "../../components/ChangePassword";
@@ -27,7 +26,7 @@ export default function ProfileIcon({
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
   const [DevicePreference, setDevicePreference] = useState("this");
-  const [loading, setLoading] = useState();
+  const [loading] = useState();
   const [openModal, setOpenModal] = useState(false);
 
   const handleCloseModel = () => {
@@ -38,9 +37,9 @@ export default function ProfileIcon({
     setModelState(true);
   };
 
-  const handleClickDropdown = () => {
-    setOpenModal(!openModal);
-  };
+  // const handleClickDropdown = () => {
+  //   setOpenModal(!openModal);
+  // };
 
   const handleLogout = async (event) => {
     event.preventDefault();

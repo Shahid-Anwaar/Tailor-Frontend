@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { loginLogo, Logo } from "../assets";
+import { loginLogo } from "../assets";
 import { Navigate } from "react-router-dom";
 
 export default function LoginLayout() {

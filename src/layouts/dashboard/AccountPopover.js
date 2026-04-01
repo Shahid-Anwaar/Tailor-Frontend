@@ -1,16 +1,13 @@
-import { useEffect, useRef, useState } from "react";
-import { Avatar, Badge, Box, Menu, MenuItem, Typography } from "@mui/material";
+import { useRef, useState } from "react";
+import { Avatar, Menu, MenuItem, Typography } from "@mui/material";
 import ProfilePop from "./ProfilePop";
 // import { picBaseUrl } from "../../config/config";
-import { useLocation } from "react-router-dom";
 import Iconify from "../../components/Iconify";
-import { adminIcon, SidebarLogo } from "../../assets";
 // ----------------------------------------------------------------------
 
 export default function AccountPopover({ setIsLoading }) {
   const anchorRef = useRef(null);
   const [open, setOpen] = useState(false);
-  const [ProfileInfo, setProfileInfo] = useState({});
   const [notificationAnchor, setNotificationAnchor] = useState(null);
 
   const notifications = [
@@ -81,9 +78,9 @@ export default function AccountPopover({ setIsLoading }) {
     setOpen(false);
   };
 
-  const handleNotificationClick = (event) => {
-    setNotificationAnchor(event.currentTarget);
-  };
+  // const handleNotificationClick = (event) => {
+  //   setNotificationAnchor(event.currentTarget);
+  // };
   const handleNotificationClose = () => {
     setNotificationAnchor(null);
   };
